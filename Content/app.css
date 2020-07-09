@@ -1,9 +1,16 @@
-/* custom syle sheet */
+/*
+    Sitename: COMP125 - Midterm Test
+    Filename: app.css
+    Author: Haris Siddiqi
+    Description: Custom style sheet
+*/
 
+/* Header */
 .navbar {
     opacity: 0.8;
 }
 
+/* Main */
 #MainTitle {
     font-size: 4em;
     color: #5690CF;
@@ -18,6 +25,7 @@ article, section {
     font-size: 1.35em;
 }
 
+/* Footer */
 #contactForm {
     margin-bottom: 4em;
 }
