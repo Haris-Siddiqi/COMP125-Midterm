@@ -273,7 +273,53 @@
         return false;
     }
 
-    // Call all functions
+    // Validates and processes form input
+    function formValidator()
+    {
+        // Call function to save and display form data
+        let submitButton = document.getElementById("sendButton");
+        submitButton.addEventListener("click", (event) =>
+        {
+            event.preventDefault();
+            let fname = document.getElementById('firstName').value;
+            let email = document.getElementById('email').value;
+            
+            // Validate form
+            if(fname.length < 2 || email.length < 2)
+            {
+                alert("Error. Please enter a valid first name and email");
+            }
+            // Continue to process form
+            else
+            {
+                formFunc();
+            }
+        });
+    }
+
+    // Saves and displays form data
+    function formFunc() {
+        // Get data
+        let fname = document.getElementById('firstName').value;
+        let lname = document.getElementById('lastName').value;
+        let num = document.getElementById('contactNumber').value;
+        let email = document.getElementById('email').value;
+        let msg = document.getElementById('yourMessage').value;
+
+        // Print
+        console.log("---------Form Data---------");
+        console.log(`First name: ${fname}`);
+        console.log(`Last name: ${lname}`);
+        console.log(`Contact number: ${num}`);
+        console.log(`Email address: ${email}`);
+        console.log(`Message: ${msg}`);
+        console.log("---------------------------");
+
+        // Submitted alert
+        alert("Sucessfully submitted!");
+    }
+
+    // Call paragraph injections and form validation
     function Start()
     {  
        let intro = addIntroPar();
@@ -286,7 +332,10 @@
        let hyd = addHydraPar();
        let ith = addIthacaPar();
        let gav = addGavdosPar();
+       console.log("Paragraph text successfully injected")
+       let formValidated = formValidator();
     } 
 
+    // Call start function
     window.addEventListener("load", Start);
 })();
